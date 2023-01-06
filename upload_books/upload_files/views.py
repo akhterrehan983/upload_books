@@ -24,23 +24,6 @@ def upload(request):
 
 
 def show(request):
-    # print(request.FILES["file"])
-
-    connection = mail.get_connection()
-    # Manually open the connection
-    connection.open()
-
-    # Construct an email message that uses the connection
-    email1 = mail.EmailMessage(
-        'Hello',
-        'You tried to view uploaded files',
-        'akhterrehan983@gmail.com',
-        ['akhterrehan983@gmail.com'],
-        connection=connection,
-    )
-    email1.send() # Se
-    connection.close()
-
     username = request.POST.get("username")
     password = request.POST.get("pwd")
     print(username, password)
